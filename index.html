@@ -1,1 +1,67 @@
-###•
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaSense Bottle</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background-color:#f4f8fb; color:#333;}
+    header {background:#00aaff; color:#fff; padding:40px; text-align:center;}
+    header h1 {margin:0;}
+    section {padding:40px; max-width:800px; margin:0 auto;}
+    .features {display:flex; flex-wrap:wrap; justify-content:space-around;}
+    .feature {flex:1 1 250px; margin:20px; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1);}
+    .cta {text-align:center; margin-top:40px;}
+    .cta button {padding:15px 30px; font-size:1rem; background:#00aaff; color:#fff; border:none; border-radius:5px; cursor:pointer;}
+    footer {background:#222; color:#fff; text-align:center; padding:20px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AquaSense</h1>
+    <p>La borraccia intelligente che analizza la qualità dell'acqua</p>
+  </header>
+
+  <section>
+    <h2>Perché AquaSense?</h2>
+    <p>AquaSense monitora i parametri principali dell'acqua, come pH, temperatura e conducibilità, direttamente dalla tua borraccia.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Monitoraggio in tempo reale</h3>
+        <p>Ricevi aggiornamenti immediati sui valori dell'acqua per bere in totale sicurezza.</p>
+      </div>
+      <div class="feature">
+        <h3>App dedicata</h3>
+        <p>Sincronizza la borraccia con il tuo smartphone per tenere traccia della qualità dell'acqua nel tempo.</p>
+      </div>
+      <div class="feature">
+        <h3>Design ecologico</h3>
+        <p>Realizzata con materiali riciclabili per rispettare l'ambiente.</p>
+      </div>
+    </div>
+    <div class="cta">
+      <button onclick="generateReport()">Analizza ora</button>
+    </div>
+    <div id="report" style="margin-top:20px; text-align:center;"></div>
+  </section>
+
+  <footer>
+    &copy; 2025 AquaSense. Tutti i diritti riservati.
+  </footer>
+
+  <script>
+    function generateReport() {
+      const ph = (7 + (Math.random() * 0.5 - 0.25)).toFixed(2);
+      const temperature = (20 + Math.random() * 5).toFixed(1);
+      const conductivity = (500 + Math.random()*50).toFixed(0);
+      const report = `
+        <h3>Valori dell'acqua</h3>
+        <p>pH: ${ph}</p>
+        <p>Temperatura: ${temperature}°C</p>
+        <p>Conducibilità: ${conductivity} μS/cm</p>
+      `;
+      document.getElementById('report').innerHTML = report;
+    }
+  </script>
+</body>
+</html>
